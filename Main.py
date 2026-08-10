@@ -5,7 +5,7 @@ from BankingSystem import BankingSystem
 
 # Testing different accounts and functions
 
-myBankingSystem = BankingSystem([], [], "Jathon's Bank")
+myBankingSystem = BankingSystem([], [], "Jathon's")
 
 myBankingSystem.hireWorker("Joe")
 myBankingSystem.hireWorker("Bob")

@@ -20,6 +20,7 @@ class Worker:
             userInput = input("Action: ")
 
             if userInput == "A":
+                print("Types of Accounts - savings, business, checking")
                 userAccountTypeInput = input("Account type: ")
                 userNameInput = input("Name: ")
                 userPasswordInput = input("Set a password: ")
@@ -30,12 +31,16 @@ class Worker:
                 elif userAccountTypeInput == "business":
                     self.workerBankSystem.createAccount(userAccountTypeInput, userNameInput, userPasswordInput, 0.0)
                     print("Business Account Created")
+                elif userAccountTypeInput == "checking":
+                    self.workerBankSystem.createAccount(userAccountTypeInput, userNameInput, userPasswordInput, 0.0)
+                    print("Checking Account Created")
                 else:
                     print("Not a valid account type!")
 
             elif userInput == "B":
                 userBusinessAccount = input("Name of business account: ")
                 # there might be a problem with the if loop under
+                validAccount = False
                 for accounts in self.workerBankSystem.accounts:
                     if accounts.name == userBusinessAccount:
                         userBusinessAccountPassword = input("Password: ")
@@ -48,11 +53,12 @@ class Worker:
 
                             accounts.addCheck(userCheckName, userCheckSender, userCheckReceiver, float(userCheckAmount), userBusinessAccountPassword)
                             print("Done!")
-                            continue
+                            validAccount = True
                         else:
                             print("Wrong password!")   
 
-                print("Not a valid account!")                                         
+                if not validAccount:
+                    print("Not a valid account!")                                      
             elif userInput == "C":
                 userAccount = input("Name of account: ")
 
@@ -61,7 +67,7 @@ class Worker:
                         userWithdrawAmount = input("Amount: ")
                         userAccountPassword = input("Password: ")
 
-                        accounts.decreaseBalance(userWithdrawAmount, userAccountPassword)
+                        accounts.decreaseBalance(userWithdrawAmount, float(userAccountPassword))
                         continue
                 print("Not a valid account!")
             elif userInput == "D":

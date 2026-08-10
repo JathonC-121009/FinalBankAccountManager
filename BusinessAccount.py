@@ -21,7 +21,6 @@ class BusinessAccount(Account):
                 self.increaseBalance(amount, password)
                 self.checksCashed.append(checkName)
                 self.moneyAddedToAccountToday += amount
-                print("Done!")
             else:
                 print("Wait till tomorrow!")
         else:
