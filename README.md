@@ -21,3 +21,7 @@ BankingSystem.py: This class represents the object of the Bank itself. It can cr
 Worker.py: This class functions the workers in a bank. They provide the UI for the functions of the bank system.
 
 DebitCard.py: This class functions as a debit card that is given by the CheckingAccount class. This class only provides basic functions.
+
+# Terminal Based UI
+
+![alt text](Picture.png)
