@@ -1,6 +1,12 @@
 # Bank-Account-Manager
 
-This program is a python project aiming to simulate a bank account manager. To run the program, run Main.py.
+This program is a python project aiming to simulate a bank account manager. 
+
+# How to Run
+
+To run the program, run Main.py.
+
+# Classes
 
 Main.py: Where all the objects are created and where you can test the code.
 
